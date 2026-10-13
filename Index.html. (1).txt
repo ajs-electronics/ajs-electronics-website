@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AJ's Electronics</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+}
+
+header{
+    background:#0d47a1;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+}
+
+header h1{
+    font-size:3rem;
+}
+
+header p{
+    font-size:1.2rem;
+    margin-top:10px;
+}
+
+nav{
+    background:#1565c0;
+    text-align:center;
+    padding:15px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:15px;
+    font-weight:bold;
+}
+
+.hero{
+    text-align:center;
+    padding:60px 20px;
+    background:white;
+}
+
+.hero h2{
+    color:#0d47a1;
+    margin-bottom:15px;
+}
+
+.products{
+    padding:50px 20px;
+}
+
+.products h2{
+    text-align:center;
+    margin-bottom:30px;
+    color:#0d47a1;
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+.card h3{
+    color:#1565c0;
+}
+
+.about{
+    background:white;
+    padding:50px 20px;
+    text-align:center;
+}
+
+.contact{
+    padding:50px 20px;
+    text-align:center;
+}
+
+.contact a{
+    color:#1565c0;
+    text-decoration:none;
+}
+
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    padding:15px 20px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+footer{
+    background:#0d47a1;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>AJ's Electronics</h1>
+    <p>Technology You Can Trust, Prices You'll Love</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#products">Products</a>
+    <a href="#about">About Us</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section class="hero" id="home">
+    <h2>Welcome to AJ's Electronics</h2>
+    <p>Your trusted source for quality electronics and accessories.</p>
+</section>
+
+<section class="products" id="products">
+    <h2>Our Products</h2>
+
+    <div class="product-grid">
+
+        <div class="card">
+            <h3>Smartphones</h3>
+            <p>Latest Android and iPhone devices.</p>
+        </div>
+
+        <div class="card">
+            <h3>Laptops</h3>
+            <p>Business, gaming and student laptops.</p>
+        </div>
+
+        <div class="card">
+            <h3>Phone Accessories</h3>
+            <p>Chargers, earphones, covers and power banks.</p>
+        </div>
+
+        <div class="card">
+            <h3>Laptop Accessories</h3>
+            <p>Mice, keyboards, bags and adapters.</p>
+        </div>
+
+        <div class="card">
+            <h3>Fridges</h3>
+            <p>Energy-efficient refrigerators.</p>
+        </div>
+
+        <div class="card">
+            <h3>Freezers</h3>
+            <p>Reliable freezers for home and business.</p>
+        </div>
+
+        <div class="card">
+            <h3>Cookers</h3>
+            <p>Quality gas and electric cookers.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="about" id="about">
+    <h2>About Us</h2>
+    <p>
+        AJ's Electronics provides quality electronics, appliances and
+        accessories at affordable prices. We are committed to excellent
+        customer service and genuine products.
+    </p>
+</section>
+
+<section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <p>📞 0700763735</p>
+    <p>📧 gitaujus@gmail.com</p>
+</section>
+
+<a class="whatsapp" href="https://wa.me/254700763735">
+    WhatsApp Us
+</a>
+
+<footer>
+    <p>© 2026 AJ's Electronics. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html><!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AJ's Electronics</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+    color:#333;
+}
+
+header{
+    background:#002b6b;
+    color:white;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:32px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:bold;
+}
+
+.hero{
+    background:linear-gradient(rgba(0,43,107,.8),rgba(0,43,107,.8)),
+    url('https://images.unsplash.com/photo-1518770660439-4636190af475');
+    background-size:cover;
+    background-position:center;
+    color:white;
+    text-align:center;
+    padding:120px 20px;
+}
+
+.hero h1{
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:22px;
+    margin-bottom:30px;
+}
+
+.btn{
+    background:#ffc107;
+    color:#002b6b;
+    padding:15px 30px;
+    text-decoration:none;
+    border-radius:5px;
+    font-weight:bold;
+}
+
+.section{
+    padding:70px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+    color:#002b6b;
+    font-size:36px;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:10px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 4px 12px rgba(0,0,0,.1);
+}
+
+.card h3{
+    color:#002b6b;
+    margin-bottom:15px;
+}
+
+.about{
+    background:white;
+}
+
+.contact{
+    background:#002b6b;
+    color:white;
+    text-align:center;
+}
+
+.contact p{
+    margin:10px 0;
+    font-size:18px;
+}
+
+footer{
+    background:#001b46;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <div class="logo">AJ's Electronics</div>
+
+```
+<nav>
+    <a href="#home">Home</a>
+    <a href="#products">Products</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+</nav>
+```
+
+</header>
+
+<section class="hero" id="home">
+    <h1>AJ's Electronics</h1>
+    <p>Technology You Can Trust, Prices You'll Love.</p>
+
+```
+<a href="https://wa.me/254700763735" class="btn">
+    Shop Now
+</a>
+```
+
+</section>
+
+<section class="section" id="products">
+
+```
+<h2 class="section-title">Our Products</h2>
+
+<div class="products">
+
+    <div class="card">
+        <h3>💻 Laptops</h3>
+        <p>Business, Student, Gaming and Ultrabook laptops.</p>
+    </div>
+
+    <div class="card">
+        <h3>⌨ Laptop Accessories</h3>
+        <p>Bags, Mice, Keyboards, Cooling Pads and Adapters.</p>
+    </div>
+
+    <div class="card">
+        <h3>📱 Phone Accessories</h3>
+        <p>Chargers, Earphones, Power Banks, Cases and Screen Protectors.</p>
+    </div>
+
+    <div class="card">
+        <h3>❄ Fridges & Freezers</h3>
+        <p>Energy-efficient appliances for home and business use.</p>
+    </div>
+
+    <div class="card">
+        <h3>🍳 Cookers</h3>
+        <p>Gas and electric cookers from trusted brands.</p>
+    </div>
+
+    <div class="card">
+        <h3>🏠 Home Appliances</h3>
+        <p>Quality appliances at affordable prices.</p>
+    </div>
+
+</div>
+```
+
+</section>
+
+<section class="section about" id="about">
+
+```
+<h2 class="section-title">Why Choose AJ's Electronics?</h2>
+
+<div class="products">
+
+    <div class="card">
+        <h3>✅ Genuine Products</h3>
+        <p>We stock authentic and reliable electronics.</p>
+    </div>
+
+    <div class="card">
+        <h3>💰 Affordable Prices</h3>
+        <p>Great deals and competitive prices every day.</p>
+    </div>
+
+    <div class="card">
+        <h3>🛠 After-Sales Support</h3>
+        <p>Dedicated support for all our customers.</p>
+    </div>
+
+</div>
+```
+
+</section>
+
+<section class="section contact" id="contact">
+
+```
+<h2 class="section-title" style="color:white;">
+    Contact Us
+</h2>
+
+<p>📞 Call/WhatsApp: 0700763735</p>
+
+<p>📧 Email: gitaujus@gmail.com</p>
+
+<p>📍 AJ's Electronics - Your Trusted Electronics Store</p>
+```
+
+</section>
+
+<footer>
+    © 2026 AJ's Electronics. All Rights Reserved.
+</footer>
+
+</body>
+</html>
