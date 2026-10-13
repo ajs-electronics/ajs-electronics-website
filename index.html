@@ -1,0 +1,978 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shop laptops, phones and accessories, fridges, freezers and cookers at AJ's Electronic. Technology you can trust, price you will love.">
+  <title>AJ's Electronic | Quality Electronics in Kenya</title>
+
+  <style>
+    :root {
+      --navy: #101a2c;
+      --blue: #1769ff;
+      --gold: #ffbd45;
+      --light: #f4f7fb;
+      --dark: #172033;
+      --green: #168b50;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--dark);
+      background: white;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button, input, select {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .topbar {
+      background: var(--navy);
+      color: white;
+      text-align: center;
+      padding: 8px 12px;
+      font-size: 13px;
+    }
+
+    header {
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 12px #00000010;
+    }
+
+    .nav {
+      max-width: 1150px;
+      margin: auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1.2;
+    }
+
+    .logo span {
+      color: var(--blue);
+    }
+
+    .tagline {
+      font-size: 11px;
+      color: #687386;
+      font-weight: normal;
+    }
+
+    .navlinks {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .navlinks a:hover {
+      color: var(--blue);
+    }
+
+    .hero {
+      background: linear-gradient(120deg, #101a2c 0%, #163f82 100%);
+      color: white;
+      padding: 65px 20px;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: clamp(35px, 5vw, 58px);
+      line-height: 1.12;
+      margin: 12px 0 18px;
+    }
+
+    .hero p {
+      color: #e1e9f7;
+      max-width: 540px;
+      margin-bottom: 24px;
+    }
+
+    .hero-art {
+      min-height: 220px;
+      border: 1px solid #ffffff30;
+      background: #ffffff10;
+      border-radius: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 25px;
+    }
+
+    .hero-art .big-icon {
+      font-size: 86px;
+      line-height: 1.3;
+    }
+
+    .hero-art strong {
+      font-size: 21px;
+    }
+
+    .hero-art small {
+      color: #e1e9f7;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--gold);
+      color: #172033;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(0.97);
+    }
+
+    .btn-blue {
+      background: var(--blue);
+      color: white;
+    }
+
+    .features {
+      max-width: 1100px;
+      margin: -1px auto 0;
+      padding: 24px 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .feature {
+      padding: 16px;
+      background: var(--light);
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .feature strong {
+      display: block;
+    }
+
+    .feature span {
+      font-size: 13px;
+      color: #647084;
+    }
+
+    section {
+      padding: 48px 20px;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 30px;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #687386;
+      margin-bottom: 28px;
+    }
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .category {
+      background: var(--light);
+      border: 2px solid transparent;
+      border-radius: 12px;
+      padding: 18px 8px;
+      text-align: center;
+      color: var(--navy);
+      font-weight: bold;
+    }
+
+    .category .icon {
+      font-size: 34px;
+      display: block;
+    }
+
+    .category:hover, .category.active {
+      border-color: var(--blue);
+      background: #edf3ff;
+    }
+
+    .shop {
+      background: var(--light);
+    }
+
+    .shop-tools {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .shop-tools input, .shop-tools select {
+      background: white;
+      border: 1px solid #d7deea;
+      border-radius: 8px;
+      padding: 12px;
+      min-width: 0;
+    }
+
+    .shop-tools input {
+      flex: 1;
+    }
+
+    .shop-tools select {
+      width: 190px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .product {
+      background: white;
+      border: 1px solid #e5eaf2;
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 14px #14203a08;
+    }
+
+    .product-image {
+      height: 190px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #edf2fa;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 12px;
+    }
+
+    .product-icon {
+      font-size: 76px;
+    }
+
+    .product-info {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .product-category {
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .product h3 {
+      font-size: 17px;
+      margin: 5px 0;
+      line-height: 1.4;
+    }
+
+    .product-desc {
+      font-size: 13px;
+      color: #687386;
+      margin-bottom: 12px;
+    }
+
+    .price {
+      font-weight: 900;
+      font-size: 20px;
+      color: var(--navy);
+      margin-top: auto;
+      padding-bottom: 12px;
+    }
+
+    .product .btn {
+      width: 100%;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .empty {
+      text-align: center;
+      padding: 35px;
+      color: #687386;
+      grid-column: 1 / -1;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .about-panel {
+      background: var(--navy);
+      color: white;
+      border-radius: 18px;
+      padding: 28px;
+    }
+
+    .about-panel .big-icon {
+      font-size: 70px;
+    }
+
+    .about-panel h3 {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .about-copy h2 {
+      font-size: 29px;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .about-copy p {
+      color: #687386;
+      margin-bottom: 12px;
+    }
+
+    .contact {
+      background: #edf3ff;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .contact-card {
+      background: white;
+      border-radius: 12px;
+      padding: 22px;
+      text-align: center;
+    }
+
+    .contact-card .icon {
+      font-size: 30px;
+    }
+
+    .contact-card h3 {
+      margin: 6px 0;
+    }
+
+    .contact-card p {
+      color: #687386;
+      font-size: 14px;
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      background: var(--navy);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    footer p {
+      color: #c4cede;
+      font-size: 13px;
+      margin-top: 7px;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 18px;
+      right: 18px;
+      z-index: 20;
+      background: #20bd5a;
+      color: white;
+      padding: 13px 17px;
+      border-radius: 40px;
+      box-shadow: 0 4px 18px #0003;
+      font-weight: bold;
+    }
+
+    @media (max-width: 760px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 45px 20px;
+      }
+
+      .hero-art {
+        min-height: 170px;
+      }
+
+      .hero-art .big-icon {
+        font-size: 60px;
+      }
+
+      .navlinks {
+        width: 100%;
+        justify-content: space-between;
+        gap: 8px;
+        font-size: 13px;
+      }
+
+      .categories {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .product-image {
+        height: 145px;
+      }
+
+      .product-info {
+        padding: 12px;
+      }
+
+      .product h3 {
+        font-size: 15px;
+      }
+
+      .price {
+        font-size: 17px;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid, .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .shop-tools select {
+        width: 100%;
+      }
+
+      .section-title {
+        font-size: 26px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .products {
+        grid-template-columns: 1fr;
+      }
+
+      .product-image {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    Quality electronics in Kenya | Friendly service | Great value
+  </div>
+
+  <header>
+    <nav class="nav">
+      <a class="logo" href="#home">
+        AJ'S <span>ELECTRONIC</span>
+        <div class="tagline">Technology you can trust, price you will love</div>
+      </a>
+
+      <div class="navlinks">
+        <a href="#home">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#shop">Shop</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <div>
+          <div class="eyebrow">Welcome to AJ's Electronic</div>
+          <h1>Smart Technology.<br>Better Prices.</h1>
+          <p>
+            Find laptops, phone and computer accessories, fridges,
+            freezers, cookers and other home appliances.
+            Quality products, reliable service and value you can trust.
+          </p>
+          <a class="btn" href="#shop">Explore Our Products →</a>
+        </div>
+
+        <div class="hero-art">
+          <div class="big-icon">💻 📱</div>
+          <strong>Your Electronics Store</strong>
+          <small>Technology you can trust, price you will love.</small>
+        </div>
+      </div>
+    </section>
+
+    <div class="features">
+      <div class="feature">
+        <strong>✓ Quality Products</strong>
+        <span>Shop with confidence</span>
+      </div>
+      <div class="feature">
+        <strong>✓ Competitive Prices</strong>
+        <span>Value for your money</span>
+      </div>
+      <div class="feature">
+        <strong>✓ Easy Enquiries</strong>
+        <span>Contact us on WhatsApp</span>
+      </div>
+    </div>
+
+    <section id="categories">
+      <div class="section-inner">
+        <h2 class="section-title">Shop by Category</h2>
+        <p class="section-subtitle">Find what you need at AJ's Electronic.</p>
+
+        <div class="categories">
+          <button class="category active" data-category="all">
+            <span class="icon">🛍️</span>All Products
+          </button>
+          <button class="category" data-category="laptops">
+            <span class="icon">💻</span>Laptops
+          </button>
+          <button class="category" data-category="accessories">
+            <span class="icon">🎧</span>Accessories
+          </button>
+          <button class="category" data-category="appliances">
+            <span class="icon">🧊</span>Fridges & Freezers
+          </button>
+          <button class="category" data-category="cookers">
+            <span class="icon">🍳</span>Cookers
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="shop" id="shop">
+      <div class="section-inner">
+        <h2 class="section-title">Our Products</h2>
+        <p class="section-subtitle">
+          Browse our selection or ask us about available stock.
+        </p>
+
+        <div class="shop-tools">
+          <input
+            type="search"
+            id="search"
+            placeholder="Search laptops, mouse, fridges..."
+            aria-label="Search products"
+          >
+
+          <select id="categoryFilter" aria-label="Filter products">
+            <option value="all">All categories</option>
+            <option value="laptops">Laptops</option>
+            <option value="accessories">Accessories</option>
+            <option value="appliances">Fridges & Freezers</option>
+            <option value="cookers">Cookers</option>
+          </select>
+        </div>
+
+        <div class="products" id="products">
+          <article class="product" data-category="laptops" data-search="toshiba laptop core i5 8gb ram ssd">
+            <div class="product-image">
+              <span class="product-icon">💻</span>
+            </div>
+            <div class="product-info">
+              <span class="product-category">Laptop</span>
+              <h3>Toshiba Core i5 Laptop</h3>
+              <p class="product-desc">
+                Intel Core i5-5200U, 8GB RAM, 119GB SSD,
+                Intel HD Graphics 5500, 64-bit.
+              </p>
+              <div class="price">KSh 19,999</div>
+              <button class="btn order-btn" data-product="Toshiba Core i5 Laptop - KSh 19,999">
+                Enquire on WhatsApp
+              </button>
+            </div>
+          </article>
+
+          <article class="product" data-category="accessories" data-search="computer mouse wireless wired">
+            <div class="product-image">
+              <span class="product-icon">🖱️</span>
+            </div>
+            <div class="product-info">
+              <span class="product-category">Accessory</span>
+              <h3>Computer Mouse</h3>
+              <p class="product-desc">Useful for laptops and desktop computers. Ask about available models.</p>
+              <div class="price">Ask for price</div>
+              <button class="btn order-btn" data-product="Computer Mouse">
+                Ask for Price
+              </button>
+            </div>
+          </article>
+
+          <article class="product" data-category="accessories" data-search="keyboard computer laptop wired wireless">
+            <div class="product-image">
+              <span class="product-icon">⌨️</span>
+            </div>
+            <div class="product-info">
+              <span class="product-category">Accessory</span>
+              <h3>Computer Keyboard</h3>
+              <p class="product-desc">Keyboard options for work, study and everyday computing.</p>
+              <div class="price">Ask for price</div>
+              <button class="btn order-btn" data-product="Computer Keyboard">
+                Ask for Price
+              </button>
+            </div>
+          </article>
+
+          <article class="product" data-category="accessories" data-search="phone charger cable usb type c accessories">
+            <div class="product-image">
+              <span class="product-icon">🔌</span>
+            </div>
+            <div class="product-info">
+              <span class="product-category">Accessory</span>
+              <h3>Phone Chargers & Cables</h3>
+              <p class="product-desc">Ask about compatible charging accessories for your device.</p>
+              <div class="price">Ask for price</div>
+              <button class="btn order-btn" data-product="Phone Chargers and Cables">
+                Ask for Price
+              </button>
+            </div>
+          </article>
+
+          <article class="product" data-category="accessories" data-search="earphones headphones audio">
+            <div class="product-image">
+              <span class="product-icon">🎧</span>
+            </div>
+            <div class="product-info">
+              <span class="product-category">Accessory</span>
+              <h3>Earphones & Headphones</h3>
+              <p class="product-desc">Audio accessories for calls, music and entertainment.</p>
+              <div class="price">Ask for price</div>
+              <button class="btn order-btn" data-product="Earphones and Headphones">
+                Ask for Price
+              </button>
+            </div>
+          </article>
+
+          <article class="product" data-category="accessories" data-search="laptop bag computer backpack">
+            <div class="product-image">
+              <span class="product-icon">🎒</span>
+            </div>
+            <div class="product-info">
+              <span class="product-category">Accessory</span>
+              <h3>Laptop Bags</h3>
+              <p class="product-desc">Ask about bag sizes and styles currently available.</p>
+              <div class="price">Ask for price</div>
+              <button class="btn order-btn" data-product="Laptop Bag">
+                Ask for Price
+              </button>
+            </div>
+          </article>
+
+          <article class="product" data-category="appliances" data-search="fridge refrigerator freezer home appliance">
+            <div class="product-image">
+              <span class="product-icon">🧊</span>
+            </div>
+            <div class="product-info">
+              <span class="product-category">Home Appliance</span>
+              <h3>Fridges & Freezers</h3>
+              <p class="product-desc">Ask about available capacities, brands and prices.</p>
+              <div class="price">Ask for price</div>
+              <button class="btn order-btn" data-product="Fridges and Freezers">
+                Check Availability
+              </button>
+            </div>
+          </article>
+
+          <article class="product" data-category="cookers" data-search="cooker gas electric oven kitchen appliance">
+            <div class="product-image">
+              <span class="product-icon">🍳</span>
+            </div>
+            <div class="product-info">
+              <span class="product-category">Home Appliance</span>
+              <h3>Cookers & Ovens</h3>
+              <p class="product-desc">Ask about cooker types, sizes and available models.</p>
+              <div class="price">Ask for price</div>
+              <button class="btn order-btn" data-product="Cookers and Ovens">
+                Check Availability
+              </button>
+            </div>
+          </article>
+
+          <article class="product" data-category="accessories" data-search="usb flash disk memory storage">
+            <div class="product-image">
+              <span class="product-icon">💾</span>
+            </div>
+            <div class="product-info">
+              <span class="product-category">Accessory</span>
+              <h3>USB Flash Disks</h3>
+              <p class="product-desc">Portable storage options. Ask about available capacities.</p>
+              <div class="price">Ask for price</div>
+              <button class="btn order-btn" data-product="USB Flash Disks">
+                Ask for Price
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <p style="text-align:center;margin-top:25px;color:#687386;font-size:13px">
+          Product availability and prices may change. Contact us to confirm before ordering.
+        </p>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="section-inner about-grid">
+        <div class="about-panel">
+          <div class="big-icon">⚡</div>
+          <h3>Technology You Can Trust</h3>
+          <p>Price You Will Love.</p>
+        </div>
+
+        <div class="about-copy">
+          <h2>About AJ's Electronic</h2>
+          <p>
+            AJ's Electronic is your destination for electronics,
+            computer accessories and essential home appliances.
+          </p>
+          <p>
+            We aim to help customers find suitable products at competitive
+            prices, with friendly service and convenient enquiries.
+          </p>
+          <p>
+            Looking for a laptop, phone accessory, fridge, freezer or cooker?
+            Contact us to ask about current stock and pricing.
+          </p>
+          <a class="btn btn-blue" href="#contact">Contact Our Team</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="section-inner">
+        <h2 class="section-title">Contact AJ's Electronic</h2>
+        <p class="section-subtitle">
+          Have a question or need a product? Get in touch.
+        </p>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="icon">💬</div>
+            <h3>WhatsApp</h3>
+            <p>Ask about products, prices and availability.</p>
+          </div>
+
+          <div class="contact-card">
+            <div class="icon">🛍️</div>
+            <h3>Product Enquiries</h3>
+            <p>Tell us what you need and we will help you check availability.</p>
+          </div>
+
+          <div class="contact-card">
+            <div class="icon">🇰🇪</div>
+            <h3>Serving Kenya</h3>
+            <p>Contact us to discuss collection or delivery arrangements.</p>
+          </div>
+        </div>
+
+        <div style="text-align:center;margin-top:25px">
+          <button class="btn btn-blue" id="contactBtn">Message Us on WhatsApp</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="logo" style="color:white">AJ'S <span>ELECTRONIC</span></div>
+    <p>Technology you can trust, price you will love.</p>
+    <p>© <span id="year"></span> AJ's Electronic. All rights reserved.</p>
+  </footer>
+
+  <a class="whatsapp-float" href="#contact" id="whatsappFloat">💬 WhatsApp</a>
+
+  <script>
+    /*
+      IMPORTANT:
+      Replace 2547XXXXXXXX below with your WhatsApp number.
+      Example format: 254712345678
+      Use country code 254, with no +, spaces or dashes.
+    */
+    const WHATSAPP_NUMBER = "2547XXXXXXXX";
+
+    function openWhatsApp(message) {
+      if (WHATSAPP_NUMBER.includes("X") ||
+          !/^254\d{9}$/.test(WHATSAPP_NUMBER)) {
+        alert("Please add your correct WhatsApp number in the website code first.");
+        return;
+      }
+
+      const url = "https://wa.me/" + WHATSAPP_NUMBER +
+        "?text=" + encodeURIComponent(message);
+
+      window.open(url, "_blank");
+    }
+
+    document.querySelectorAll(".order-btn").forEach(function(button) {
+      button.addEventListener("click", function() {
+        const product = button.getAttribute("data-product");
+        openWhatsApp(
+          "Hello AJ's Electronic! I am interested in: " +
+          product +
+          ". Please share the current price and availability."
+        );
+      });
+    });
+
+    document.getElementById("contactBtn").addEventListener("click", function() {
+      openWhatsApp("Hello AJ's Electronic! I would like to enquire about your products.");
+    });
+
+    document.getElementById("whatsappFloat").addEventListener("click", function(event) {
+      event.preventDefault();
+      openWhatsApp("Hello AJ's Electronic! I would like to enquire about your products.");
+    });
+
+    const searchInput = document.getElementById("search");
+    const categoryFilter = document.getElementById("categoryFilter");
+    const products = Array.from(document.querySelectorAll(".product"));
+    const categoryButtons = document.querySelectorAll(".category");
+
+    function filterProducts() {
+      const searchTerm = searchInput.value.toLowerCase().trim();
+      const category = categoryFilter.value;
+      let visibleCount = 0;
+
+      products.forEach(function(product) {
+        const text = (
+          product.innerText + " " +
+          product.getAttribute("data-search")
+        ).toLowerCase();
+
+        const matchesSearch = text.includes(searchTerm);
+        const matchesCategory =
+          category === "all" ||
+          product.getAttribute("data-category") === category;
+
+        const show = matchesSearch && matchesCategory;
+        product.style.display = show ? "flex" : "none";
+
+        if (show) visibleCount++;
+      });
+
+      let emptyMessage = document.getElementById("emptyMessage");
+
+      if (!emptyMessage) {
+        emptyMessage = document.createElement("div");
+        emptyMessage.id = "emptyMessage";
+        emptyMessage.className = "empty";
+        emptyMessage.textContent = "No matching products found. Try another search.";
+        document.getElementById("products").appendChild(emptyMessage);
+      }
+
+      emptyMessage.style.display = visibleCount === 0 ? "block" : "none";
+    }
+
+    searchInput.addEventListener("input", filterProducts);
+
+    categoryFilter.addEventListener("change", function() {
+      categoryButtons.forEach(function(button) {
+        button.classList.toggle(
+          "active",
+          button.getAttribute("data-category") === categoryFilter.value
+        );
+      });
+      filterProducts();
+    });
+
+    categoryButtons.forEach(function(button) {
+      button.addEventListener("click", function() {
+        const category = button.getAttribute("data-category");
+        categoryFilter.value = category;
+
+        categoryButtons.forEach(function(otherButton) {
+          otherButton.classList.toggle("active", otherButton === button);
+        });
+
+        filterProducts();
+        document.getElementById("shop").scrollIntoView({behavior: "smooth"});
+      });
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+  </html>
