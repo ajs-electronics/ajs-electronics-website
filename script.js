@@ -1,3 +1,4 @@
+
 const WHATSAPP_NUMBER = "254700763735";
 
 const menuToggle = document.getElementById("menuToggle");
@@ -8,11 +9,12 @@ menuToggle?.addEventListener("click", () => {
   menuToggle.setAttribute("aria-expanded", String(isOpen));
 });
 
-mainNav?.querySelectorAll("a").forEach(link =>
-  link.addEventListener("click", () =>
-    mainNav.classList.remove("open")
-  )
-);
+mainNav?.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    mainNav.classList.remove("open");
+    menuToggle?.setAttribute("aria-expanded", "false");
+  });
+});
 
 const cards = [...document.querySelectorAll(".product-card")];
 const categoryButtons = [...document.querySelectorAll(".category-card")];
@@ -36,6 +38,7 @@ function filterProducts() {
 
     const visible = matchesCategory && matchesSearch;
     card.hidden = !visible;
+
     if (visible) shown++;
   });
 
@@ -55,23 +58,18 @@ function filterProducts() {
   }
 }
 
-categoryButtons.forEach(button =>
+categoryButtons.forEach(button => {
   button.addEventListener("click", () => {
     categoryButtons.forEach(item => item.classList.remove("active"));
     button.classList.add("active");
     activeCategory = button.dataset.filter;
     filterProducts();
-  })
-);
+  });
+});
 
 searchInput?.addEventListener("input", filterProducts);
 
 function openWhatsApp(productName = "") {
-  if (!/^\d{10,15}$/.test(WHATSAPP_NUMBER)) {
-    alert("Please check the WhatsApp number in script.js.");
-    return;
-  }
-
   const message = productName
     ? `Hello AJ's Electronic, I'm interested in: ${productName}. Please share current price and availability.`
     : "Hello AJ's Electronic, I'd like to ask about your products.";
@@ -82,20 +80,23 @@ function openWhatsApp(productName = "") {
   );
 }
 
-document.querySelectorAll("[data-product]").forEach(button =>
-  button.addEventListener("click", () =>
-    openWhatsApp(button.dataset.product)
-  )
-);
+document.querySelectorAll("[data-product]").forEach(button => {
+  button.addEventListener("click", () => {
+    openWhatsApp(button.dataset.product);
+  });
+});
 
-document.querySelectorAll(".whatsapp-link").forEach(link =>
+document.querySelectorAll(".whatsapp-link").forEach(link => {
   link.addEventListener("click", event => {
     event.preventDefault();
     openWhatsApp();
-  })
-);
+  });
+});
 
 const yearElement = document.getElementById("year");
+
 if (yearElement) {
   yearElement.textContent = new Date().getFullYear();
 }
+
+filterProducts();
