@@ -5,6 +5,8 @@ const menuToggle = document.getElementById("menuToggle");
 const mainNav = document.getElementById("mainNav");
 
 menuToggle?.addEventListener("click", () => {
+  if (!mainNav) return;
+
   const isOpen = mainNav.classList.toggle("open");
   menuToggle.setAttribute("aria-expanded", String(isOpen));
 });
@@ -20,6 +22,8 @@ const cards = [...document.querySelectorAll(".product-card")];
 const categoryButtons = [...document.querySelectorAll(".category-card")];
 const searchInput = document.getElementById("productSearch");
 const resultCount = document.getElementById("resultCount");
+const productGrid = document.getElementById("productGrid");
+
 let activeCategory = "all";
 
 function filterProducts() {
@@ -31,12 +35,13 @@ function filterProducts() {
       activeCategory === "all" ||
       card.dataset.category === activeCategory;
 
-    const matchesSearch =
-      ((card.dataset.name || "") + " " + card.textContent)
-        .toLowerCase()
-        .includes(query);
+    const searchableText =
+      `${card.dataset.name || ""} ${card.textContent || ""}`
+        .toLowerCase();
 
+    const matchesSearch = searchableText.includes(query);
     const visible = matchesCategory && matchesSearch;
+
     card.hidden = !visible;
 
     if (visible) shown++;
@@ -49,12 +54,12 @@ function filterProducts() {
 
   document.querySelector(".empty-state")?.remove();
 
-  if (shown === 0) {
+  if (shown === 0 && productGrid) {
     const empty = document.createElement("p");
     empty.className = "empty-state";
     empty.textContent =
-      "No matching products found. Try another search or contact us for help.";
-    document.getElementById("productGrid")?.appendChild(empty);
+      "No matching products found. Try another search or contact us on WhatsApp.";
+    productGrid.appendChild(empty);
   }
 }
 
@@ -62,7 +67,8 @@ categoryButtons.forEach(button => {
   button.addEventListener("click", () => {
     categoryButtons.forEach(item => item.classList.remove("active"));
     button.classList.add("active");
-    activeCategory = button.dataset.filter;
+
+    activeCategory = button.dataset.filter || "all";
     filterProducts();
   });
 });
@@ -71,18 +77,18 @@ searchInput?.addEventListener("input", filterProducts);
 
 function openWhatsApp(productName = "") {
   const message = productName
-    ? `Hello AJ's Electronic, I'm interested in: ${productName}. Please share current price and availability.`
+    ? `Hello AJ's Electronic, I'm interested in: ${productName}. Please share the current price and availability.`
     : "Hello AJ's Electronic, I'd like to ask about your products.";
 
-  window.open(
-    `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,
-    "_blank"
-  );
+  const url =
+    `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+  window.open(url, "_blank", "noopener,noreferrer");
 }
 
 document.querySelectorAll("[data-product]").forEach(button => {
   button.addEventListener("click", () => {
-    openWhatsApp(button.dataset.product);
+    openWhatsApp(button.dataset.product || "");
   });
 });
 
