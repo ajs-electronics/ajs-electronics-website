@@ -6,7 +6,6 @@ const mainNav = document.getElementById("mainNav");
 
 menuToggle?.addEventListener("click", () => {
   if (!mainNav) return;
-
   const isOpen = mainNav.classList.toggle("open");
   menuToggle.setAttribute("aria-expanded", String(isOpen));
 });
@@ -36,14 +35,12 @@ function filterProducts() {
       card.dataset.category === activeCategory;
 
     const searchableText =
-      `${card.dataset.name || ""} ${card.textContent || ""}`
-        .toLowerCase();
+      `${card.dataset.name || ""} ${card.textContent || ""}`.toLowerCase();
 
-    const matchesSearch = searchableText.includes(query);
-    const visible = matchesCategory && matchesSearch;
+    const visible =
+      matchesCategory && searchableText.includes(query);
 
     card.hidden = !visible;
-
     if (visible) shown++;
   });
 
@@ -67,7 +64,6 @@ categoryButtons.forEach(button => {
   button.addEventListener("click", () => {
     categoryButtons.forEach(item => item.classList.remove("active"));
     button.classList.add("active");
-
     activeCategory = button.dataset.filter || "all";
     filterProducts();
   });
