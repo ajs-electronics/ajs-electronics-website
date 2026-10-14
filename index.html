@@ -3,23 +3,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Shop phones, phone accessories, laptops and computer accessories at AJ's Electronic, Kenya.">
-  <title>AJ's Electronic | Phones, Laptops & Accessories</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AJ's Electronic | Your Trusted Tech Store</title>
+  <meta name="description" content="Shop phones, phone accessories, laptops and computer accessories at AJ's Electronic in Kenya.">
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
   <div class="topbar">Technology you can trust, price you will love.</div>
 
-  <header class="site-header">
-    <a class="brand" href="#home">
-      <span class="brand-mark">AJ</span>
-      <span class="brand-name">AJ's Electronic<small>Your trusted tech store</small></span>
-    </a>
-
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-
+  <header>
+    <a class="brand" href="#home">AJ's <span>Electronic</span></a>
+    <button id="menuToggle" aria-label="Open menu">☰</button>
     <nav id="mainNav">
       <a href="#home">Home</a>
       <a href="#categories">Categories</a>
@@ -27,89 +22,60 @@
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
-
-    <a class="btn whatsapp" href="https://wa.me/254700763735" target="_blank" rel="noopener">WhatsApp Us</a>
   </header>
 
   <main>
     <section class="hero" id="home">
-      <div class="hero-content">
-        <span class="eyebrow">WELCOME TO AJ'S ELECTRONIC</span>
-        <h1>Your Tech.<br><span>Your Choice.</span></h1>
-        <p>Discover smartphones, laptops and accessories for work, school and everyday life. Contact us to confirm current prices and availability.</p>
-        <a class="btn" href="#products">Explore Products</a>
-        <a class="btn whatsapp" href="https://wa.me/254700763735?text=Hello%20AJ%27s%20Electronic%2C%20I%20want%20to%20see%20your%20products." target="_blank" rel="noopener">Shop on WhatsApp</a>
+      <div>
+        <p class="eyebrow">WELCOME TO AJ'S ELECTRONIC</p>
+        <h1>Your next tech upgrade <span>starts here.</span></h1>
+        <p>Discover smartphones, phone accessories, laptops and computer accessories at AJ's Electronic.</p>
+        <a class="btn" href="#products">Explore products →</a>
+        <a class="btn outline" href="https://wa.me/254700763735" target="_blank" rel="noopener">WhatsApp us</a>
       </div>
-      <div class="hero-images">
-        <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=800&q=85" alt="Laptop computer">
-        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=85" alt="Smartphone">
+      <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80" alt="Laptop computer">
+    </section>
+
+    <section id="categories" class="section">
+      <p class="eyebrow">SHOP YOUR FAVOURITES</p>
+      <h2>Product categories</h2>
+      <div class="categories">
+        <button class="category active" data-category="all">All products</button>
+        <button class="category" data-category="phones">Phones</button>
+        <button class="category" data-category="phone-accessories">Phone accessories</button>
+        <button class="category" data-category="computers">Computers & laptops</button>
+        <button class="category" data-category="computer-accessories">Computer accessories</button>
       </div>
     </section>
 
-    <section class="benefits">
-      <div><span>📱</span><strong>Wide Variety</strong><small>Phones and computers</small></div>
-      <div><span>💰</span><strong>Great Value</strong><small>Ask for current prices</small></div>
-      <div><span>💬</span><strong>Easy Ordering</strong><small>Enquire on WhatsApp</small></div>
-      <div><span>🤝</span><strong>Customer Care</strong><small>We're here to help</small></div>
-    </section>
-
-    <section class="section" id="categories">
-      <div class="section-heading">
-        <h2>Shop by Category</h2>
-        <p>Choose a main category, then select a subcategory.</p>
-      </div>
-
-      <div class="category-grid">
-        <button class="category-card active" data-filter="all">
-          <span>🛍️</span><strong>All Products</strong><small>Browse the full catalogue</small>
-        </button>
-        <button class="category-card" data-filter="phones">
-          <span>📱</span><strong>Phones</strong><small>Smartphones and mobile devices</small>
-        </button>
-        <button class="category-card" data-filter="phone-accessories">
-          <span>🎧</span><strong>Phone Accessories</strong><small>Chargers, cases and audio</small>
-        </button>
-        <button class="category-card" data-filter="computers">
-          <span>💻</span><strong>Computers & Laptops</strong><small>Computers for work and study</small>
-        </button>
-        <button class="category-card" data-filter="computer-accessories">
-          <span>⌨️</span><strong>Computer Accessories</strong><small>Keyboards, mice and storage</small>
-        </button>
-      </div>
-
-      <div class="subcategory-panel">
-        <h3>Browse Subcategories</h3>
-        <div id="subcategoryButtons" class="subcategory-buttons"></div>
-      </div>
-    </section>
-
-    <section class="section products-section" id="products">
-      <div class="section-heading">
-        <h2>Our Products</h2>
-        <p>Every listing has a product-specific image and a WhatsApp enquiry option.</p>
-      </div>
-
-      <div class="product-toolbar">
-        <input id="productSearch" type="search" placeholder="Search products or brands..." aria-label="Search products">
-        <span id="resultCount" aria-live="polite"></span>
-      </div>
-
+    <section id="products" class="section products-section">
+      <p class="eyebrow">OUR CATALOGUE</p>
+      <h2>Find your next device</h2>
+      <input id="search" type="search" placeholder="Search products..." aria-label="Search products">
+      <select id="subcategory" aria-label="Filter by subcategory">
+        <option value="all">All subcategories</option>
+      </select>
+      <p id="count"></p>
       <div id="productGrid" class="product-grid"></div>
     </section>
 
-    <section class="section about" id="about">
-      <div class="section-heading"><h2>About AJ's Electronic</h2></div>
-      <p>AJ's Electronic helps customers find technology products for communication, learning, business and entertainment. Browse our phone, accessory and computer categories, then contact us to confirm the exact model, specifications, price and stock availability.</p>
-      <p><strong>Technology you can trust, price you will love.</strong></p>
+    <section id="about" class="section about">
+      <h2>About AJ's Electronic</h2>
+      <p>We help you find technology for work, study, communication and entertainment. Contact us to confirm product models, availability, prices and delivery options.</p>
+      <h3>Technology you can trust, price you will love.</h3>
     </section>
 
-    <section class="contact" id="contact">
-      <h2>Need help choosing?</h2>
-      <p>Message us for product recommendations, current prices and availability.</p>
-      <a class="btn whatsapp" href="https://wa.me/254700763735?text=Hello%20AJ%27s%20Electronic%2C%20please%20help%20me%20choose%20a%20product." target="_blank" rel="noopener">Chat on WhatsApp</a>
+    <section id="contact" class="contact">
+      <h2>Ready to shop?</h2>
+      <p>Contact us for current prices and availability.</p>
+      <a class="btn light" href="https://wa.me/254700763735" target="_blank" rel="noopener">Chat on WhatsApp ↗</a>
     </section>
   </main>
 
-  <footer>© <span id="year"></span> AJ's Electronic. All rights reserved.</footer>
+  <footer>
+    <strong>AJ's Electronic</strong>
+    <p>Technology you can trust, price you will love.</p>
+    <small>© <span id="year"></span> AJ's Electronic. Product images may be illustrative.</small>
+  </footer>
 </body>
 </html>
