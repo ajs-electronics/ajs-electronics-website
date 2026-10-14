@@ -2,345 +2,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Shop phones, phone accessories, laptops and computer accessories at AJ's Electronic in Kenya.">
-<title>AJ's Electronic | Technology You Can Trust</title>
-<style>
-:root{--navy:#10233f;--blue:#1769e0;--orange:#ff9f1c;--light:#f4f7fb;--green:#128c50}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#202b3c;background:#fff}
-a{text-decoration:none;color:inherit}
-button,input{font:inherit}
-.topbar{background:var(--navy);color:white;text-align:center;padding:10px;font-size:13px}
-header{background:white;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:15px 5%;position:sticky;top:0;z-index:10;box-shadow:0 2px 12px #00000012}
-.logo{display:flex;align-items:center;gap:10px;font-weight:bold;color:var(--navy);font-size:20px}
-.logo-mark{display:grid;place-items:center;width:43px;height:43px;background:var(--blue);color:white;border-radius:12px}
-nav{display:flex;align-items:center;gap:20px;font-size:14px}
-nav a:hover{color:var(--blue)}
-.btn{border:0;border-radius:8px;background:var(--blue);color:white;padding:12px 17px;display:inline-block;cursor:pointer;font-weight:bold}
-.btn:hover{opacity:.88}
-.whatsapp{background:var(--green)}
-.hero{padding:65px 6%;background:linear-gradient(120deg,#10233f,#1b4d83);color:white;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:35px}
-.hero h1{font-size:clamp(34px,5vw,57px);line-height:1.12;margin:12px 0}
-.hero h1 span{color:#ffbf60}
-.hero p{line-height:1.8;max-width:560px;color:#e2eafa}
-.hero-art{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:center}
-.hero-art img{width:100%;height:240px;object-fit:cover;border-radius:18px}
-.section{padding:45px 5%}
-.heading{text-align:center;margin:0 auto 28px}
-.heading h2{font-size:30px;color:var(--navy);margin-bottom:8px}
-.heading p{color:#657187;line-height:1.6}
-.category-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
-.category{border:1px solid #e1e7ef;border-radius:13px;padding:20px 12px;text-align:center;background:white;cursor:pointer}
-.category:hover,.category.active{border-color:var(--blue);background:#edf4ff}
-.category .emoji{font-size:32px;display:block;margin-bottom:10px}
-.category strong{display:block;margin-bottom:7px}
-.category small{color:#667085;line-height:1.5}
-.toolbar{display:flex;justify-content:space-between;align-items:center;gap:15px;margin:24px 0;flex-wrap:wrap}
-.search{width:min(100%,380px);padding:13px;border:1px solid #ccd5e2;border-radius:9px}
-.product-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
-.product{border:1px solid #e7ebf1;border-radius:13px;overflow:hidden;background:white;display:flex;flex-direction:column;min-width:0;transition:transform .2s,box-shadow .2s}
-.product:hover{transform:translateY(-3px);box-shadow:0 8px 24px #12233d12}
-.product img{width:100%;height:175px;object-fit:cover;background:#eef2f7}
-.product-info{padding:14px;display:flex;flex:1;flex-direction:column}
-.product h3{font-size:16px;color:var(--navy);margin:0 0 9px}
-.product p{font-size:13px;color:#657187;line-height:1.55;flex:1;margin:0 0 15px}
-.product .btn{width:100%;font-size:13px}
-.tag{font-size:11px;color:var(--blue);font-weight:bold;text-transform:uppercase;margin-bottom:8px}
-#resultCount{color:#657187;font-size:13px}
-.empty{text-align:center;grid-column:1/-1;padding:30px}
-.about{background:var(--light);text-align:center}
-.about p{max-width:760px;margin:0 auto 20px;line-height:1.8;color:#586579}
-.contact{background:var(--navy);color:white;text-align:center;padding:45px 5%}
-.contact p{line-height:1.8;color:#e0e8f5}
-footer{background:#0b1729;color:#c9d3e2;text-align:center;padding:18px;font-size:13px}
-@media(max-width:900px){.product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}nav{gap:10px}}
-@media(max-width:650px){header{padding:12px 4%;flex-wrap:wrap}.logo{font-size:17px}nav{order:3;width:100%;justify-content:center;flex-wrap:wrap;padding-top:8px}.header-chat{font-size:12px;padding:10px}.hero{grid-template-columns:1fr;padding:42px 5%}.hero-art img{height:170px}.section{padding:35px 4%}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.product img{height:135px}.product-info{padding:10px}.product h3{font-size:14px}.product p{font-size:12px}.heading h2{font-size:25px}}
-@media(max-width:360px){.product-grid{grid-template-columns:1fr}.category-grid{grid-template-columns:1fr}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Shop phones, phone accessories, laptops and computer accessories at AJ's Electronic, Kenya.">
+  <title>AJ's Electronic | Phones, Laptops & Accessories</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-<div class="topbar">Technology you can trust, price you will love.</div>
-<header>
-<a class="logo" href="#home"><span class="logo-mark">AJ</span><span>AJ's Electronic</span></a>
-<nav>
-<a href="#home">Home</a><a href="#categories">Categories</a><a href="#products">Products</a><a href="#about">About Us</a><a href="#contact">Contact</a>
-</nav>
-<a class="btn whatsapp header-chat" href="https://wa.me/254700763735" target="_blank" rel="noopener">WhatsApp Us</a>
-</header>
+  <div class="topbar">Technology you can trust, price you will love.</div>
 
-<main>
-<section class="hero" id="home">
-<div>
-<p><strong>WELCOME TO AJ'S ELECTRONIC</strong></p>
-<h1>Your Tech. Your Choice. <span>Great Value.</span></h1>
-<p>Shop smartphones, phone accessories, laptops and computer accessories. Contact us for current prices, availability and help choosing the right product.</p>
-<a class="btn" href="#products">Explore Products</a>
-<a class="btn whatsapp" href="https://wa.me/254700763735?text=Hello%20AJ%27s%20Electronic%2C%20I%27d%20like%20to%20see%20your%20products." target="_blank" rel="noopener">Shop on WhatsApp</a>
-</div>
-<div class="hero-art">
-<img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=700&q=80" alt="Laptop computer">
-<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80" alt="Smartphone">
-</div>
-</section>
+  <header class="site-header">
+    <a class="brand" href="#home">
+      <span class="brand-mark">AJ</span>
+      <span class="brand-name">AJ's Electronic<small>Your trusted tech store</small></span>
+    </a>
 
-<section class="section" id="categories">
-<div class="heading"><h2>Shop by Category</h2><p>Choose a category to explore our product range.</p></div>
-<div class="category-grid">
-<button class="category active" data-filter="all"><span class="emoji">🛍️</span><strong>All Products</strong><small>Browse all 80 listings</small></button>
-<button class="category" data-filter="phones"><span class="emoji">📱</span><strong>Phones</strong><small>20 product listings</small></button>
-<button class="category" data-filter="phone-accessories"><span class="emoji">🎧</span><strong>Phone Accessories</strong><small>20 product listings</small></button>
-<button class="category" data-filter="computers"><span class="emoji">💻</span><strong>Computers & Laptops</strong><small>20 product listings</small></button>
-<button class="category" data-filter="computer-accessories"><span class="emoji">⌨️</span><strong>Computer Accessories</strong><small>20 product listings</small></button>
-</div>
-</section>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
 
-<section class="section" id="products">
-<div class="heading"><h2>Our Products</h2><p>Find a product and enquire directly through WhatsApp.</p></div>
-<div class="toolbar">
-<strong>Browse our range</strong>
-<input class="search" id="productSearch" type="search" placeholder="Search products..." aria-label="Search products">
-</div>
-<p id="resultCount" aria-live="polite">Showing 80 products</p>
-<div class="product-grid" id="productGrid"></div>
-</section>
+    <nav id="mainNav">
+      <a href="#home">Home</a>
+      <a href="#categories">Categories</a>
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-<section class="section about" id="about">
-<div class="heading"><h2>About AJ's Electronic</h2></div>
-<p>AJ's Electronic helps customers discover technology products for communication, education, work and everyday life. We feature phones, accessories, laptops and computer essentials. Contact us to confirm the exact model, specifications, price and availability before ordering.</p>
-<p><strong>Our promise:</strong> Technology you can trust, price you will love.</p>
-</section>
+    <a class="btn whatsapp" href="https://wa.me/254700763735" target="_blank" rel="noopener">WhatsApp Us</a>
+  </header>
 
-<section class="contact" id="contact">
-<h2>Need help choosing a product?</h2>
-<p>Send us a WhatsApp message for prices, stock availability and product enquiries.</p>
-<a class="btn whatsapp" href="https://wa.me/254700763735?text=Hello%20AJ%27s%20Electronic%2C%20I%20need%20help%20choosing%20a%20product." target="_blank" rel="noopener">Chat with Us on WhatsApp</a>
-</section>
-</main>
-<footer>© <span id="year"></span> AJ's Electronic. All rights reserved.</footer>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <span class="eyebrow">WELCOME TO AJ'S ELECTRONIC</span>
+        <h1>Your Tech.<br><span>Your Choice.</span></h1>
+        <p>Discover smartphones, laptops and accessories for work, school and everyday life. Contact us to confirm current prices and availability.</p>
+        <a class="btn" href="#products">Explore Products</a>
+        <a class="btn whatsapp" href="https://wa.me/254700763735?text=Hello%20AJ%27s%20Electronic%2C%20I%20want%20to%20see%20your%20products." target="_blank" rel="noopener">Shop on WhatsApp</a>
+      </div>
+      <div class="hero-images">
+        <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=800&q=85" alt="Laptop computer">
+        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=85" alt="Smartphone">
+      </div>
+    </section>
 
-<script>
-const WHATSAPP_NUMBER = "254700763735";
+    <section class="benefits">
+      <div><span>📱</span><strong>Wide Variety</strong><small>Phones and computers</small></div>
+      <div><span>💰</span><strong>Great Value</strong><small>Ask for current prices</small></div>
+      <div><span>💬</span><strong>Easy Ordering</strong><small>Enquire on WhatsApp</small></div>
+      <div><span>🤝</span><strong>Customer Care</strong><small>We're here to help</small></div>
+    </section>
 
-/* Illustrative images. Confirm actual product model and stock with the shop. */
-const imagePools = {
-phones: [
-"https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=600&q=80",
-"https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80",
-"https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=600&q=80",
-"https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=600&q=80"
-],
-"phone-accessories": [
-"https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80",
-"https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=600&q=80",
-"https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=600&q=80",
-"https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=600&q=80"
-],
-computers: [
-"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=600&q=80",
-"https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=600&q=80",
-"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=600&q=80",
-"https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=600&q=80"
-],
-"computer-accessories": [
-"https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=600&q=80",
-"https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80",
-"https://images.unsplash.com/photo-1587831990711-23ca6441447b?auto=format&fit=crop&w=600&q=80",
-"https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=600&q=80"
-]
-};
+    <section class="section" id="categories">
+      <div class="section-heading">
+        <h2>Shop by Category</h2>
+        <p>Choose a main category, then select a subcategory.</p>
+      </div>
 
-const productGroups = [
-{
-category:"phones",
-label:"Phones",
-items:[
-["Apple iPhone","Explore available iPhone models and storage options."],
-["Samsung Galaxy S Series","Premium Samsung smartphone options."],
-["Samsung Galaxy A Series","Everyday smartphones for work and entertainment."],
-["Tecno Camon","Smartphone options with camera features."],
-["Tecno Spark","Affordable smartphone options."],
-["Infinix Note","Large-screen smartphones for everyday use."],
-["Infinix Hot","Smartphones for apps and daily communication."],
-["Itel Smartphones","Entry-level Android smartphone options."],
-["Google Pixel","Explore Pixel phone models."],
-["Xiaomi Redmi","Android smartphones for different budgets."],
-["OnePlus Phones","Performance-focused smartphone options."],
-["Oppo Smartphones","Explore Oppo phone models."],
-["Vivo Smartphones","Smartphones for photos and everyday use."],
-["Huawei Smartphones","Explore available Huawei models."],
-["Nokia Smartphones","Smartphone options from Nokia."],
-["Refurbished Smartphones","Ask about condition, model and warranty."],
-["Dual SIM Smartphones","Phones with dual SIM functionality."],
-["5G Smartphones","Ask about available 5G-compatible models."],
-["Android Tablets","Explore available Android tablet options."],
-["Feature Phones","Simple mobile phones for calls and texts."]
-]
-},
-{
-category:"phone-accessories",
-label:"Phone Accessories",
-items:[
-["Phone Cases & Covers","Protective covers for different phone models."],
-["Screen Protectors","Ask for a protector that fits your phone."],
-["USB-C Chargers","Charging adapters for compatible devices."],
-["iPhone Chargers","Ask about compatible iPhone charging options."],
-["Fast Charging Cables","Cables for supported fast-charging devices."],
-["USB-C Cables","USB-C cables in available lengths."],
-["Lightning Cables","Cables for compatible Apple devices."],
-["Power Banks","Portable charging for compatible devices."],
-["Wireless Chargers","Wireless charging options for supported phones."],
-["Bluetooth Earbuds","Wireless audio options for everyday use."],
-["Wired Earphones","Wired listening options for compatible phones."],
-["Bluetooth Headphones","Wireless headphones for music and calls."],
-["Phone Holders","Phone stands and holders for daily use."],
-["Car Phone Mounts","Mounts for convenient in-car phone placement."],
-["Car Chargers","Charging options for use in vehicles."],
-["OTG Adapters","Connect compatible phones to USB devices."],
-["SIM Adapters & Ejectors","Useful SIM tools and accessories."],
-["Bluetooth Speakers","Portable speakers for music and audio."],
-["Phone Camera Lenses","Ask about compatible mobile photography accessories."],
-["Smart Watches","Wearable devices with phone connectivity."]
-]
-},
-{
-category:"computers",
-label:"Computers & Laptops",
-items:[
-["HP Core i5 Laptops","Ask for available generations, RAM and storage."],
-["HP Core i7 Laptops","Explore higher-performance HP laptop options."],
-["HP ProBook","Business laptop options for work and study."],
-["HP EliteBook","Explore business-class laptop models."],
-["Dell Latitude","Business laptops for everyday productivity."],
-["Dell Inspiron","Laptop options for home and work."],
-["Dell XPS","Explore premium Dell laptop models."],
-["Lenovo ThinkPad","Business laptops for productivity."],
-["Lenovo IdeaPad","Laptops for home, school and work."],
-["Lenovo Yoga","Explore convertible laptop options."],
-["Acer Aspire","Everyday laptops for different needs."],
-["Acer TravelMate","Business and productivity laptop options."],
-["ASUS VivoBook","Laptops for study and everyday work."],
-["ASUS ZenBook","Explore slim laptop options."],
-["Apple MacBook Air","Ask about available MacBook models."],
-["Apple MacBook Pro","Explore MacBook Pro options."],
-["Microsoft Surface","Portable computer options from Surface."],
-["Gaming Laptops","Ask about graphics, RAM and gaming performance."],
-["Chromebooks","Laptops designed around ChromeOS."],
-["Desktop Computers","Ask about available desktop PC configurations."]
-]
-},
-{
-category:"computer-accessories",
-label:"Computer Accessories",
-items:[
-["Wireless Mouse","Wireless mice for laptops and desktops."],
-["Wired Mouse","USB mice for everyday computer use."],
-["Mechanical Keyboards","Ask about switch types and layouts."],
-["USB Keyboards","Keyboards for compatible computers."],
-["Wireless Keyboard & Mouse Set","Convenient wireless desktop accessories."],
-["Laptop Bags","Carry and protect your laptop."],
-["Laptop Backpacks","Backpacks for carrying laptops and accessories."],
-["Laptop Cooling Pads","Cooling pads for compatible laptops."],
-["Laptop Stands","Raise your laptop for a more comfortable setup."],
-["USB Flash Drives","Portable storage in available capacities."],
-["External Hard Drives","Additional storage for your files."],
-["External SSD Drives","Portable solid-state storage options."],
-["Computer RAM","Ask about compatible RAM type and capacity."],
-["Internal SSD Drives","Storage upgrades for compatible computers."],
-["External DVD Drives","External optical drives for supported computers."],
-["USB Hubs","Expand available USB connections."],
-["Laptop Chargers","Find a charger compatible with your laptop."],
-["HDMI Cables","Connect compatible computers to displays."],
-["Computer Monitors","Displays for home, office and study."],
-["Webcams","Webcams for video meetings and online learning."]
-]
-}
-];
+      <div class="category-grid">
+        <button class="category-card active" data-filter="all">
+          <span>🛍️</span><strong>All Products</strong><small>Browse the full catalogue</small>
+        </button>
+        <button class="category-card" data-filter="phones">
+          <span>📱</span><strong>Phones</strong><small>Smartphones and mobile devices</small>
+        </button>
+        <button class="category-card" data-filter="phone-accessories">
+          <span>🎧</span><strong>Phone Accessories</strong><small>Chargers, cases and audio</small>
+        </button>
+        <button class="category-card" data-filter="computers">
+          <span>💻</span><strong>Computers & Laptops</strong><small>Computers for work and study</small>
+        </button>
+        <button class="category-card" data-filter="computer-accessories">
+          <span>⌨️</span><strong>Computer Accessories</strong><small>Keyboards, mice and storage</small>
+        </button>
+      </div>
 
-const productGrid = document.getElementById("productGrid");
-const searchInput = document.getElementById("productSearch");
-const resultCount = document.getElementById("resultCount");
-const categoryButtons = document.querySelectorAll(".category");
-let activeCategory = "all";
+      <div class="subcategory-panel">
+        <h3>Browse Subcategories</h3>
+        <div id="subcategoryButtons" class="subcategory-buttons"></div>
+      </div>
+    </section>
 
-function renderProducts(){
-  const query = searchInput.value.trim().toLowerCase();
-  let shown = 0;
-  productGrid.innerHTML = "";
+    <section class="section products-section" id="products">
+      <div class="section-heading">
+        <h2>Our Products</h2>
+        <p>Every listing has a product-specific image and a WhatsApp enquiry option.</p>
+      </div>
 
-  productGroups.forEach(group => {
-    if(activeCategory !== "all" && activeCategory !== group.category) return;
+      <div class="product-toolbar">
+        <input id="productSearch" type="search" placeholder="Search products or brands..." aria-label="Search products">
+        <span id="resultCount" aria-live="polite"></span>
+      </div>
 
-    group.items.forEach((item,index) => {
-      const name = item[0];
-      const description = item[1];
-      if(!(name + " " + description + " " + group.label).toLowerCase().includes(query)) return;
+      <div id="productGrid" class="product-grid"></div>
+    </section>
 
-      const card = document.createElement("article");
-      card.className = "product";
+    <section class="section about" id="about">
+      <div class="section-heading"><h2>About AJ's Electronic</h2></div>
+      <p>AJ's Electronic helps customers find technology products for communication, learning, business and entertainment. Browse our phone, accessory and computer categories, then contact us to confirm the exact model, specifications, price and stock availability.</p>
+      <p><strong>Technology you can trust, price you will love.</strong></p>
+    </section>
 
-      const img = document.createElement("img");
-      img.src = imagePools[group.category][index % imagePools[group.category].length];
-      img.alt = name + " product image";
-      img.loading = "lazy";
-      img.onerror = function(){
-        this.onerror = null;
-        this.src = "https://placehold.co/600x400/eef2f7/10233f?text=AJ%27s+Electronic";
-      };
+    <section class="contact" id="contact">
+      <h2>Need help choosing?</h2>
+      <p>Message us for product recommendations, current prices and availability.</p>
+      <a class="btn whatsapp" href="https://wa.me/254700763735?text=Hello%20AJ%27s%20Electronic%2C%20please%20help%20me%20choose%20a%20product." target="_blank" rel="noopener">Chat on WhatsApp</a>
+    </section>
+  </main>
 
-      const info = document.createElement("div");
-      info.className = "product-info";
-
-      const tag = document.createElement("span");
-      tag.className = "tag";
-      tag.textContent = group.label;
-
-      const title = document.createElement("h3");
-      title.textContent = name;
-
-      const desc = document.createElement("p");
-      desc.textContent = description;
-
-      const button = document.createElement("button");
-      button.className = "btn whatsapp";
-      button.textContent = "Ask on WhatsApp";
-      button.type = "button";
-      button.addEventListener("click", () => {
-        const message = "Hello AJ's Electronic, I am interested in " + name + ". Please share the price, specifications and availability.";
-        window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message), "_blank", "noopener");
-      });
-
-      info.append(tag,title,desc,button);
-      card.append(img,info);
-      productGrid.appendChild(card);
-      shown++;
-    });
-  });
-
-  resultCount.textContent = "Showing " + shown + " product listing" + (shown === 1 ? "" : "s");
-  if(shown === 0){
-    const empty = document.createElement("p");
-    empty.className = "empty";
-    empty.textContent = "No products found. Try another search or contact us on WhatsApp.";
-    productGrid.appendChild(empty);
-  }
-}
-
-categoryButtons.forEach(button => {
-  button.addEventListener("click", () => {
-    categoryButtons.forEach(item => item.classList.remove("active"));
-    button.classList.add("active");
-    activeCategory = button.dataset.filter;
-    renderProducts();
-    document.getElementById("products").scrollIntoView({behavior:"smooth"});
-  });
-});
-
-searchInput.addEventListener("input", renderProducts);
-document.getElementById("year").textContent = new Date().getFullYear();
-renderProducts();
-</script>
+  <footer>© <span id="year"></span> AJ's Electronic. All rights reserved.</footer>
 </body>
 </html>
