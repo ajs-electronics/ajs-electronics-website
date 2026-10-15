@@ -1,120 +1,947 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AJ's Electronic</title>
-  <style>
-    /* Paste the CSS from Section 2 here */
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#071426">
+<meta name="description" content="Shop laptops, phones, accessories and electronics at AJ's Electronic. Technology you can trust, price you will love.">
+<title>AJ's Electronic | Smart Technology, Better Prices</title>
+
+<style>
+:root {
+  --navy: #071426;
+  --navy2: #102744;
+  --blue: #1677ff;
+  --cyan: #36c5f0;
+  --bg: #f4f7fb;
+  --white: #ffffff;
+  --text: #172438;
+  --muted: #758196;
+  --border: #e6ebf2;
+  --radius: 18px;
+  --shadow: 0 8px 30px rgba(14, 35, 65, .07);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+button, input, select { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { text-decoration: none; color: inherit; }
+
+.topbar {
+  background: #030c19;
+  color: #dbeafe;
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+  letter-spacing: .3px;
+}
+
+header {
+  background: var(--navy);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  box-shadow: 0 5px 25px #07142620;
+}
+
+.nav {
+  max-width: 1250px;
+  padding: 18px 24px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 190px;
+}
+
+.logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  font-size: 23px;
+  font-weight: 900;
+  color: white;
+  background: linear-gradient(135deg, var(--blue), var(--cyan));
+}
+
+.brand-name { font-size: 20px; font-weight: 850; }
+.brand-name span { color: var(--cyan); }
+.brand small {
+  display: block;
+  color: #aabbd0;
+  font-size: 10px;
+  margin-top: 4px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 13px;
+  color: #d0d9e7;
+}
+
+.nav-links a:hover { color: var(--cyan); }
+
+.nav-cta, .primary-btn {
+  background: var(--blue);
+  color: white;
+  padding: 12px 17px;
+  border-radius: 11px;
+  font-weight: 700;
+  border: 0;
+  cursor: pointer;
+}
+
+main {
+  max-width: 1250px;
+  margin: auto;
+  padding: 28px 24px 60px;
+}
+
+.hero {
+  min-height: 355px;
+  border-radius: 25px;
+  overflow: hidden;
+  position: relative;
+  background:
+    radial-gradient(ellipse at 80% 45%, #1a65b9 0%, transparent 35%),
+    linear-gradient(115deg, #081629 0%, #102b4c 60%, #07518c 100%);
+  color: white;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  padding: 48px;
+  gap: 20px;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 270px;
+  height: 270px;
+  right: 8%;
+  top: 42px;
+  border: 1px solid #ffffff24;
+  border-radius: 50%;
+  box-shadow: 0 0 0 35px #ffffff08,
+              0 0 0 70px #ffffff06;
+  pointer-events: none;
+}
+
+.eyebrow {
+  color: #73dcff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-size: clamp(32px, 4.5vw, 53px);
+  line-height: 1.09;
+  letter-spacing: -1.5px;
+  margin: 17px 0;
+  max-width: 570px;
+}
+
+.hero h1 span { color: #4ecbff; }
+
+.hero p {
+  color: #c6d6e9;
+  line-height: 1.8;
+  max-width: 460px;
+  font-size: 14px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.secondary-btn {
+  padding: 12px 17px;
+  border: 1px solid #ffffff50;
+  border-radius: 11px;
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.hero-visual {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.hero-visual img {
+  width: 100%;
+  max-width: 380px;
+  height: 245px;
+  object-fit: contain;
+  filter: drop-shadow(0 22px 25px #0007);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin: 22px 0 35px;
+}
+
+.stat {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  padding: 19px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stat-icon {
+  background: #eaf3ff;
+  color: var(--blue);
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  font-size: 20px;
+}
+
+.stat strong { display: block; font-size: 13px; }
+.stat small { display: block; color: var(--muted); margin-top: 5px; font-size: 11px; }
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 19px;
+}
+
+.section-heading h2 {
+  font-size: 25px;
+  margin: 0 0 7px;
+  letter-spacing: -.6px;
+}
+
+.section-heading p {
+  color: var(--muted);
+  margin: 0;
+  font-size: 13px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 38px;
+}
+
+.category {
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: white;
+  border-radius: var(--radius);
+  padding: 21px 15px;
+  text-align: left;
+  transition: .2s;
+}
+
+.category:hover, .category.active {
+  border-color: var(--blue);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+.category-icon {
+  font-size: 29px;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.category strong { display: block; font-size: 14px; }
+.category small { display: block; color: var(--muted); margin-top: 7px; }
+
+.catalog-tools {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.search {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 13px 15px;
+  width: min(100%, 370px);
+  outline: none;
+}
+
+.search:focus { border-color: var(--blue); }
+
+select {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 13px;
+  color: var(--text);
+  outline: none;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.product {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 17px;
+  overflow: hidden;
+  transition: .25s;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.product-image {
+  height: 190px;
+  padding: 18px;
+  background: #f8faff;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.product-badge {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  background: #e7f2ff;
+  color: #1260c4;
+  padding: 6px 9px;
+  border-radius: 7px;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.product-info { padding: 17px; }
+
+.product-category {
+  color: var(--muted);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+}
+
+.product h3 {
+  font-size: 14px;
+  line-height: 1.5;
+  min-height: 42px;
+  margin: 8px 0;
+}
+
+.product-description {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.6;
+  min-height: 18px;
+}
+
+.price {
+  font-size: 19px;
+  font-weight: 850;
+  margin: 15px 0;
+  color: #102744;
+}
+
+.order-btn {
+  display: block;
+  text-align: center;
+  background: #eaf3ff;
+  color: #095bc8;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.order-btn:hover { background: var(--blue); color: white; }
+
+.empty {
+  grid-column: 1/-1;
+  text-align: center;
+  padding: 40px 15px;
+  color: var(--muted);
+  background: white;
+  border-radius: 15px;
+}
+
+.promo {
+  margin-top: 42px;
+  border-radius: 21px;
+  padding: 35px;
+  color: white;
+  background: linear-gradient(120deg, #09203c, #1258a4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.promo h2 { margin: 0 0 10px; font-size: 25px; }
+.promo p { color: #cbdcf0; font-size: 13px; line-height: 1.7; }
+
+footer {
+  background: #061120;
+  color: white;
+  padding: 38px 24px 22px;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 35px;
+}
+
+footer h3 { font-size: 15px; }
+footer p, footer a {
+  color: #aabbd0;
+  font-size: 12px;
+  line-height: 2;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 25px auto 0;
+  border-top: 1px solid #ffffff18;
+  padding-top: 18px;
+  color: #8193aa;
+  font-size: 11px;
+}
+
+.whatsapp-float {
+  position: fixed;
+  z-index: 30;
+  right: 20px;
+  bottom: 20px;
+  width: 57px;
+  height: 57px;
+  border-radius: 50%;
+  background: #20c968;
+  color: white;
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+  box-shadow: 0 5px 22px #0003;
+}
+
+@media (max-width: 950px) {
+  .nav-links { gap: 13px; }
+  .product-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .hero { padding: 32px; }
+  .hero-visual img { height: 200px; }
+}
+
+@media (max-width: 650px) {
+  .topbar { font-size: 10px; }
+  .nav { padding: 13px 16px; flex-wrap: wrap; }
+  .brand { min-width: 0; }
+  .brand-name { font-size: 17px; }
+  .nav-links { order: 3; width: 100%; justify-content: space-between; gap: 8px; }
+  .nav-links a { font-size: 11px; }
+  .nav-cta { padding: 10px; font-size: 11px; }
+  main { padding: 17px 13px 40px; }
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 27px 22px;
+    gap: 8px;
+  }
+  .hero h1 { font-size: 36px; }
+  .hero-visual img { height: 155px; }
+  .hero::after { width: 160px; height: 160px; right: 10%; top: auto; bottom: 20px; }
+  .stats { gap: 9px; margin: 15px 0 30px; }
+  .stat { padding: 12px 9px; gap: 8px; }
+  .stat-icon { width: 34px; height: 34px; font-size: 16px; }
+  .stat strong { font-size: 11px; }
+  .stat small { font-size: 10px; }
+  .section-heading h2 { font-size: 21px; }
+  .category-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .category { padding: 15px; }
+  .product-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
+  .product-image { height: 145px; padding: 12px; }
+  .product-info { padding: 12px; }
+  .product h3 { font-size: 12px; }
+  .price { font-size: 16px; }
+  .product-description { font-size: 10px; }
+  .promo { padding: 23px; align-items: flex-start; flex-direction: column; }
+  .footer-inner { grid-template-columns: 1fr; gap: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+}
+</style>
 </head>
+
 <body>
+<div class="topbar">
+  QUALITY ELECTRONICS • GREAT VALUE • CUSTOMER FIRST
+</div>
 
-  <div class="topbar">
-    📍 Serving Kenya | Welcome to AJ's Electronic
-    — Technology you can trust, price you will love
-  </div>
+<header>
+  <nav class="nav">
+    <a href="#" class="brand" aria-label="AJ's Electronic home">
+      <div class="logo">AJ</div>
+      <div>
+        <div class="brand-name">AJ's <span>Electronic</span></div>
+        <small>Technology you can trust.</small>
+      </div>
+    </a>
 
-  <header>
-    <div class="brand">
-      🛒 AJ's Electronic
-      <small>Technology you can trust, price you will love</small>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#categories">Categories</a>
+      <a href="#products">Shop</a>
+      <a href="#contact">Contact</a>
     </div>
 
-    <input id="search" type="search"
-      placeholder="Search for products...">
-
-    <button onclick="searchProducts()">Search</button>
-    <a href="#products">🛒 My Cart</a>
-  </header>
-
-  <nav>
-    <a href="#">Home</a>
-    <a href="#categories">Categories</a>
-    <a href="#products">Shop</a>
-    <a href="#deals">Deals</a>
-    <a href="#contact">Contact Us</a>
+    <a class="nav-cta" href="#products">Shop Now ↗</a>
   </nav>
+</header>
 
-  <main>
-    <section class="hero">
+<main>
+  <section class="hero">
+    <div>
+      <div class="eyebrow">WELCOME TO AJ'S ELECTRONIC</div>
+      <h1>Smart technology.<br> <span>Better prices.</span></h1>
+      <p>
+        Discover laptops, phones, accessories and everyday electronics
+        selected to help you work smarter, stay connected and enjoy more.
+      </p>
+      <div class="hero-actions">
+        <a href="#products" class="primary-btn">Explore Products →</a>
+        <a href="#categories" class="secondary-btn">Browse Categories</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <img
+        src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=850&q=85"
+        alt="Laptop computer"
+      >
+    </div>
+  </section>
+
+  <section class="stats" aria-label="Our shopping benefits">
+    <div class="stat">
+      <div class="stat-icon">✓</div>
+      <div><strong>Quality Products</strong><small>Shop with confidence</small></div>
+    </div>
+    <div class="stat">
+      <div class="stat-icon">₭</div>
+      <div><strong>Fair Pricing</strong><small>Prices in Kenyan shillings</small></div>
+    </div>
+    <div class="stat">
+      <div class="stat-icon">♡</div>
+      <div><strong>Customer First</strong><small>Friendly assistance</small></div>
+    </div>
+    <div class="stat">
+      <div class="stat-icon">↗</div>
+      <div><strong>Easy Ordering</strong><small>Order via WhatsApp</small></div>
+    </div>
+  </section>
+
+  <section id="categories">
+    <div class="section-heading">
       <div>
-        <p class="eyebrow">UPGRADE YOUR WORLD</p>
-        <h1>Latest Tech.<br>
-          <span>Best Prices.</span>
-        </h1>
-        <p>Discover amazing deals on laptops, phones,
-          accessories and more.</p>
-        <a class="btn" href="#products">Shop Now →</a>
-        <a class="btn secondary" href="#deals">View Deals</a>
+        <h2>Shop by Category</h2>
+        <p>Find the right technology for your needs.</p>
       </div>
+    </div>
 
-      <div class="hero-products">
-        <span>📱</span>
-        <span>💻</span>
-        <span>🎧</span>
-        <span>⌚</span>
+    <div class="category-grid">
+      <button class="category active" data-category="All">
+        <span class="category-icon">💻</span>
+        <strong>All Products</strong>
+        <small>Explore the collection</small>
+      </button>
+      <button class="category" data-category="Laptops and Computers">
+        <span class="category-icon">🖥️</span>
+        <strong>Laptops & Computers</strong>
+        <small>Work, study and create</small>
+      </button>
+      <button class="category" data-category="Phones and Accessories">
+        <span class="category-icon">📱</span>
+        <strong>Phones & Accessories</strong>
+        <small>Stay connected</small>
+      </button>
+      <button class="category" data-category="Home Electronics">
+        <span class="category-icon">📺</span>
+        <strong>Home Electronics</strong>
+        <small>Upgrade your home</small>
+      </button>
+    </div>
+  </section>
+
+  <section id="products">
+    <div class="section-heading">
+      <div>
+        <h2>Featured Products</h2>
+        <p>Explore our collection and enquire about availability.</p>
       </div>
-    </section>
+    </div>
 
-    <section class="benefits">
-      <div>🛡️ <b>Quality Products</b><small>Shop with confidence</small></div>
-      <div>🚚 <b>Delivery Options</b><small>Across Kenya</small></div>
-      <div>↩️ <b>Customer Care</b><small>Here to help</small></div>
-      <div>🎧 <b>Support</b><small>Friendly assistance</small></div>
-      <div>🔒 <b>Secure Enquiries</b><small>Contact us directly</small></div>
-    </section>
+    <div class="catalog-tools">
+      <input id="search" class="search" type="search"
+        placeholder="🔎 Search products..." aria-label="Search products">
 
-    <section id="categories">
-      <h2>Shop By Category</h2>
-      <div class="categories">
-        <a href="#products" onclick="filterCategory('Laptops')">💻<br>Laptops</a>
-        <a href="#products" onclick="filterCategory('Phones')">📱<br>Phones & Tablets</a>
-        <a href="#products" onclick="filterCategory('Audio')">🎧<br>Audio</a>
-        <a href="#products" onclick="filterCategory('Accessories')">⌨️<br>Accessories</a>
-        <a href="#products" onclick="filterCategory('Smart Devices')">⌚<br>Smart Devices</a>
-        <a href="#products" onclick="filterCategory('Home Appliances')">🧊<br>Home Appliances</a>
-      </div>
-    </section>
+      <select id="sort" aria-label="Sort products">
+        <option value="featured">Featured products</option>
+        <option value="low">Price: low to high</option>
+        <option value="high">Price: high to low</option>
+        <option value="name">Name: A to Z</option>
+      </select>
+    </div>
 
-    <section id="deals" class="deals">
-      <div class="deal blue">
-        <h3>Laptop Deals</h3>
-        <p>Power up your work.</p>
-        <a href="#products">Shop Laptops →</a>
-      </div>
-      <div class="deal purple">
-        <h3>Mobile Deals</h3>
-        <p>Stay connected.</p>
-        <a href="#products">Shop Phones →</a>
-      </div>
-      <div class="deal teal">
-        <h3>Accessories</h3>
-        <p>Small tech, big value.</p>
-        <a href="#products">Shop Now →</a>
-      </div>
-      <div class="deal orange">
-        <h3>Special Offers</h3>
-        <p>Find your next deal.</p>
-        <a href="#products">Explore Deals →</a>
-      </div>
-    </section>
+    <div id="productGrid" class="product-grid"></div>
+  </section>
 
-    <section id="products">
-      <h2>Featured Products</h2>
-      <div id="productGrid" class="product-grid"></div>
-    </section>
-  </main>
+  <section class="promo">
+    <div>
+      <h2>Need help choosing a product?</h2>
+      <p>Contact AJ's Electronic for product details, current availability and pricing.</p>
+    </div>
+    <a id="promoWhatsApp" class="primary-btn" href="#contact">
+      Chat with Us →
+    </a>
+  </section>
+</main>
 
-  <footer id="contact">
-    <h2>AJ's Electronic</h2>
-    <p>Technology you can trust, price you will love.</p>
-    <p>Serving customers across Kenya.</p>
-  </footer>
+<footer id="contact">
+  <div class="footer-inner">
+    <div>
+      <a href="#" class="brand">
+        <div class="logo">AJ</div>
+        <div>
+          <div class="brand-name">AJ's <span>Electronic</span></div>
+          <small>Technology you can trust, price you will love.</small>
+        </div>
+      </a>
+      <p>Your destination for electronics, computers and accessories in Kenya.</p>
+    </div>
 
-  <script>
-    /* Paste the JavaScript from Section 3 here */
-  </script>
+    <div>
+      <h3>Quick Links</h3>
+      <a href="#">Home</a><br>
+      <a href="#categories">Categories</a><br>
+      <a href="#products">Our Products</a>
+    </div>
+
+    <div>
+      <h3>Customer Support</h3>
+      <p>WhatsApp ordering<br>Product enquiries<br>Pricing and availability</p>
+      <a id="footerWhatsApp" href="#contact">Contact AJ's Electronic ↗</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © <span id="year"></span> AJ's Electronic. All rights reserved.
+  </div>
+</footer>
+
+<a id="floatingWhatsApp" class="whatsapp-float"
+   href="#contact" aria-label="Contact us on WhatsApp">☏</a>
+
+<script>
+/*
+  WEBSITE SETTINGS
+  1. Add your WhatsApp number below in international format.
+     Kenya example: 2547XXXXXXXX (without + or spaces).
+  2. Replace sample products and image URLs with your actual stock.
+  3. This is a storefront, not an inventory-connected admin dashboard.
+*/
+
+const WHATSAPP_NUMBER = "2547XXXXXXXX";
+
+const products = [
+  {
+    id: 1,
+    name: "HP ProBook 440 G7",
+    category: "Laptops and Computers",
+    price: 30000,
+    description: "Business laptop. Ask us for full specifications.",
+    image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=600&q=80",
+    badge: "Featured"
+  },
+  {
+    id: 2,
+    name: "Laptop Computer",
+    category: "Laptops and Computers",
+    price: null,
+    description: "Contact us for available models and specifications.",
+    image: "https://images.unsplash.com/photo- laptop?auto=format&fit=crop&w=600&q=80",
+    badge: "Enquire"
+  },
+  {
+    id: 3,
+    name: "Smartphone",
+    category: "Phones and Accessories",
+    price: null,
+    description: "Ask about available phones and storage options.",
+    image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80",
+    badge: "Enquire"
+  },
+  {
+    id: 4,
+    name: "Wireless Headphones",
+    category: "Phones and Accessories",
+    price: null,
+    description: "Explore audio accessories and current stock.",
+    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80",
+    badge: "Enquire"
+  },
+  {
+    id: 5,
+    name: "Computer Accessories",
+    category: "Laptops and Computers",
+    price: null,
+    description: "Ask about mice, keyboards and other accessories.",
+    image: "https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=600&q=80",
+    badge: "Enquire"
+  },
+  {
+    id: 6,
+    name: "Television",
+    category: "Home Electronics",
+    price: null,
+    description: "Enquire about screen sizes and available models.",
+    image: "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=600&q=80",
+    badge: "Enquire"
+  },
+  {
+    id: 7,
+    name: "Mobile Accessories",
+    category: "Phones and Accessories",
+    price: null,
+    description: "Ask about chargers, cables and phone accessories.",
+    image: "https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=600&q=80",
+    badge: "Enquire"
+  },
+  {
+    id: 8,
+    name: "Home Electronics",
+    category: "Home Electronics",
+    price: null,
+    description: "Ask about appliances and available products.",
+    image: "https://images.unsplash.com/photo-1558008258-3256797b43f3?auto=format&fit=crop&w=600&q=80",
+    badge: "Enquire"
+  }
+];
+
+let activeCategory = "All";
+
+const grid = document.getElementById("productGrid");
+const search = document.getElementById("search");
+const sort = document.getElementById("sort");
+
+function money(price) {
+  return price == null
+    ? "Contact for price"
+    : "KSh " + price.toLocaleString("en-KE");
+}
+
+function whatsappLink(message) {
+  const number = WHATSAPP_NUMBER.replace(/\D/g, "");
+  const validNumber = /^254\d{9}$/.test(number);
+
+  if (!validNumber) return "#contact";
+
+  return "https://wa.me/" + number +
+    "?text=" + encodeURIComponent(message);
+}
+
+function renderProducts() {
+  const term = search.value.trim().toLowerCase();
+
+  let filtered = products.filter(product => {
+    const matchesCategory = activeCategory === "All" ||
+      product.category === activeCategory;
+
+    const matchesSearch =
+      product.name.toLowerCase().includes(term) ||
+      product.category.toLowerCase().includes(term) ||
+      product.description.toLowerCase().includes(term);
+
+    return matchesCategory && matchesSearch;
+  });
+
+  if (sort.value === "low") {
+    filtered.sort((a, b) =>
+      (a.price ?? Infinity) - (b.price ?? Infinity));
+  }
+
+  if (sort.value === "high") {
+    filtered.sort((a, b) =>
+      (b.price ?? -Infinity) - (a.price ?? -Infinity));
+  }
+
+  if (sort.value === "name") {
+    filtered.sort((a, b) => a.name.localeCompare(b.name));
+  }
+
+  grid.innerHTML = "";
+
+  if (filtered.length === 0) {
+    grid.innerHTML =
+      '<div class="empty">No matching products. Try another search.</div>';
+    return;
+  }
+
+  filtered.forEach(product => {
+    const card = document.createElement("article");
+    card.className = "product";
+
+    const imageBox = document.createElement("div");
+    imageBox.className = "product-image";
+
+    const badge = document.createElement("span");
+    badge.className = "product-badge";
+    badge.textContent = product.badge;
+
+    const img = document.createElement("img");
+    img.src = product.image;
+    img.alt = product.name;
+    img.loading = "lazy";
+    img.onerror = function () {
+      this.style.display = "none";
+      imageBox.style.background =
+        "linear-gradient(135deg,#e8f1ff,#d7e8fa)";
+      imageBox.setAttribute("aria-label", product.name);
+    };
+
+    imageBox.append(badge, img);
+
+    const info = document.createElement("div");
+    info.className = "product-info";
+
+    const category = document.createElement("div");
+    category.className = "product-category";
+    category.textContent = product.category;
+
+    const name = document.createElement("h3");
+    name.textContent = product.name;
+
+    const desc = document.createElement("p");
+    desc.className = "product-description";
+    desc.textContent = product.description;
+
+    const price = document.createElement("div");
+    price.className = "price";
+    price.textContent = money(product.price);
+
+    const order = document.createElement("a");
+    order.className = "order-btn";
+    order.textContent = "Enquire on WhatsApp ↗";
+    order.href = whatsappLink(
+      "Hello AJ's Electronic, I am interested in " +
+      product.name + ". Please confirm availability and price."
+    );
+
+    if (order.href.endsWith("#contact")) {
+      order.href = "#contact";
+    } else {
+      order.target = "_blank";
+      order.rel = "noopener noreferrer";
+    }
+
+    info.append(category, name, desc, price, order);
+    card.append(imageBox, info);
+    grid.appendChild(card);
+  });
+}
+
+document.querySelectorAll(".category").forEach(button => {
+  button.addEventListener("click", () => {
+    activeCategory = button.dataset.category;
+
+    document.querySelectorAll(".category").forEach(item => {
+      item.classList.toggle("active", item === button);
+    });
+
+    renderProducts();
+    document.getElementById("products").scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  });
+});
+
+search.addEventListener("input", renderProducts);
+sort.addEventListener("change", renderProducts);
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+[
+  "promoWhatsApp",
+  "footerWhatsApp",
+  "floatingWhatsApp"
+].forEach(id => {
+  const link = document.getElementById(id);
+  link.href = whatsappLink(
+    "Hello AJ's Electronic. I would like to enquire about your products."
+  );
+
+  if (link.href.endsWith("#contact")) {
+    link.href = "#contact";
+  } else {
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+  }
+});
+
+renderProducts();
+</script>
 </body>
 </html>
+```
