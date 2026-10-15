@@ -4,78 +4,117 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AJ's Electronic | Your Trusted Tech Store</title>
-  <meta name="description" content="Shop phones, phone accessories, laptops and computer accessories at AJ's Electronic in Kenya.">
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <title>AJ's Electronic</title>
+  <style>
+    /* Paste the CSS from Section 2 here */
+  </style>
 </head>
 <body>
-  <div class="topbar">Technology you can trust, price you will love.</div>
+
+  <div class="topbar">
+    📍 Serving Kenya | Welcome to AJ's Electronic
+    — Technology you can trust, price you will love
+  </div>
 
   <header>
-    <a class="brand" href="#home">AJ's <span>Electronic</span></a>
-    <button id="menuToggle" aria-label="Open menu">☰</button>
-    <nav id="mainNav">
-      <a href="#home">Home</a>
-      <a href="#categories">Categories</a>
-      <a href="#products">Products</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="brand">
+      🛒 AJ's Electronic
+      <small>Technology you can trust, price you will love</small>
+    </div>
+
+    <input id="search" type="search"
+      placeholder="Search for products...">
+
+    <button onclick="searchProducts()">Search</button>
+    <a href="#products">🛒 My Cart</a>
   </header>
 
+  <nav>
+    <a href="#">Home</a>
+    <a href="#categories">Categories</a>
+    <a href="#products">Shop</a>
+    <a href="#deals">Deals</a>
+    <a href="#contact">Contact Us</a>
+  </nav>
+
   <main>
-    <section class="hero" id="home">
+    <section class="hero">
       <div>
-        <p class="eyebrow">WELCOME TO AJ'S ELECTRONIC</p>
-        <h1>Your next tech upgrade <span>starts here.</span></h1>
-        <p>Discover smartphones, phone accessories, laptops and computer accessories at AJ's Electronic.</p>
-        <a class="btn" href="#products">Explore products →</a>
-        <a class="btn outline" href="https://wa.me/254700763735" target="_blank" rel="noopener">WhatsApp us</a>
+        <p class="eyebrow">UPGRADE YOUR WORLD</p>
+        <h1>Latest Tech.<br>
+          <span>Best Prices.</span>
+        </h1>
+        <p>Discover amazing deals on laptops, phones,
+          accessories and more.</p>
+        <a class="btn" href="#products">Shop Now →</a>
+        <a class="btn secondary" href="#deals">View Deals</a>
       </div>
-      <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80" alt="Laptop computer">
+
+      <div class="hero-products">
+        <span>📱</span>
+        <span>💻</span>
+        <span>🎧</span>
+        <span>⌚</span>
+      </div>
     </section>
 
-    <section id="categories" class="section">
-      <p class="eyebrow">SHOP YOUR FAVOURITES</p>
-      <h2>Product categories</h2>
+    <section class="benefits">
+      <div>🛡️ <b>Quality Products</b><small>Shop with confidence</small></div>
+      <div>🚚 <b>Delivery Options</b><small>Across Kenya</small></div>
+      <div>↩️ <b>Customer Care</b><small>Here to help</small></div>
+      <div>🎧 <b>Support</b><small>Friendly assistance</small></div>
+      <div>🔒 <b>Secure Enquiries</b><small>Contact us directly</small></div>
+    </section>
+
+    <section id="categories">
+      <h2>Shop By Category</h2>
       <div class="categories">
-        <button class="category active" data-category="all">All products</button>
-        <button class="category" data-category="phones">Phones</button>
-        <button class="category" data-category="phone-accessories">Phone accessories</button>
-        <button class="category" data-category="computers">Computers & laptops</button>
-        <button class="category" data-category="computer-accessories">Computer accessories</button>
+        <a href="#products" onclick="filterCategory('Laptops')">💻<br>Laptops</a>
+        <a href="#products" onclick="filterCategory('Phones')">📱<br>Phones & Tablets</a>
+        <a href="#products" onclick="filterCategory('Audio')">🎧<br>Audio</a>
+        <a href="#products" onclick="filterCategory('Accessories')">⌨️<br>Accessories</a>
+        <a href="#products" onclick="filterCategory('Smart Devices')">⌚<br>Smart Devices</a>
+        <a href="#products" onclick="filterCategory('Home Appliances')">🧊<br>Home Appliances</a>
       </div>
     </section>
 
-    <section id="products" class="section products-section">
-      <p class="eyebrow">OUR CATALOGUE</p>
-      <h2>Find your next device</h2>
-      <input id="search" type="search" placeholder="Search products..." aria-label="Search products">
-      <select id="subcategory" aria-label="Filter by subcategory">
-        <option value="all">All subcategories</option>
-      </select>
-      <p id="count"></p>
+    <section id="deals" class="deals">
+      <div class="deal blue">
+        <h3>Laptop Deals</h3>
+        <p>Power up your work.</p>
+        <a href="#products">Shop Laptops →</a>
+      </div>
+      <div class="deal purple">
+        <h3>Mobile Deals</h3>
+        <p>Stay connected.</p>
+        <a href="#products">Shop Phones →</a>
+      </div>
+      <div class="deal teal">
+        <h3>Accessories</h3>
+        <p>Small tech, big value.</p>
+        <a href="#products">Shop Now →</a>
+      </div>
+      <div class="deal orange">
+        <h3>Special Offers</h3>
+        <p>Find your next deal.</p>
+        <a href="#products">Explore Deals →</a>
+      </div>
+    </section>
+
+    <section id="products">
+      <h2>Featured Products</h2>
       <div id="productGrid" class="product-grid"></div>
-    </section>
-
-    <section id="about" class="section about">
-      <h2>About AJ's Electronic</h2>
-      <p>We help you find technology for work, study, communication and entertainment. Contact us to confirm product models, availability, prices and delivery options.</p>
-      <h3>Technology you can trust, price you will love.</h3>
-    </section>
-
-    <section id="contact" class="contact">
-      <h2>Ready to shop?</h2>
-      <p>Contact us for current prices and availability.</p>
-      <a class="btn light" href="https://wa.me/254700763735" target="_blank" rel="noopener">Chat on WhatsApp ↗</a>
     </section>
   </main>
 
-  <footer>
-    <strong>AJ's Electronic</strong>
+  <footer id="contact">
+    <h2>AJ's Electronic</h2>
     <p>Technology you can trust, price you will love.</p>
-    <small>© <span id="year"></span> AJ's Electronic. Product images may be illustrative.</small>
+    <p>Serving customers across Kenya.</p>
   </footer>
+
+  <script>
+    /* Paste the JavaScript from Section 3 here */
+  </script>
 </body>
 </html>
