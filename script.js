@@ -9,7 +9,7 @@
   Do not include +, spaces or hyphens.
 */
 
-const WHATSAPP_NUMBER = "2547XXXXXXXX";
+const WHATSAPP_NUMBER = "254748945622";
 
 /*
   PRODUCT CATALOG
